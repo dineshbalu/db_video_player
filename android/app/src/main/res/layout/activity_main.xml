@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context="videoplayer.android.db.android.MainActivity">
+
+    <com.github.pedrovgs.DraggableView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:draggable_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/draggable_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        draggable_view:top_view_id="@+id/videoLayout"
+        draggable_view:bottom_view_id="@+id/lv_episodes"
+        draggable_view:top_view_x_scale_factor="2.3"
+        draggable_view:top_view_y_scale_factor="2.3"
+        draggable_view:top_view_margin_right="10dp"
+        draggable_view:top_view_margin_bottom="10dp"
+        draggable_view:enable_click_to_maximize_view="true"
+        android:background="@android:color/holo_red_light">
+
+    <!-- ListView Episodes -->
+
+    <ListView
+        android:id="@+id/lv_episodes"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/holo_purple"
+        android:layout_below="@+id/videoLayout"/>
+
+    <!-- TvShow Fan Art -->
+
+        <FrameLayout
+            android:id="@+id/videoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <SurfaceView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true" />
+
+        </FrameLayout>
+
+    </com.github.pedrovgs.DraggableView>
+
+
+</RelativeLayout>
